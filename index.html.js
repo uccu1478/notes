@@ -1,8 +1,8 @@
 $(function () {
     $("#showAllCollapse").click(function () {
-        $('.collapse').collapse('show');
+        $('.collapseList').collapse('show');
     });
     $("#hideAllCollapse").click(function () {
-        $('.collapse').collapse('hide');
+        $('.collapseList').collapse('hide');
     });
 });

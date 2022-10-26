@@ -14,11 +14,20 @@ footer {
     position: absolute;
     bottom: 0;
     width: 100%;
-    height: 160px;
+    /* height: 160px; */
+}
+
+div {
+    scroll-margin-top: 5rem;
+}
+
+.container,
+.container-fluid {
+    vertical-align: middle;
 }
 
 .btn {
-    text-align: center;
+    vertical-align: middle;
     font-size: x-large;
 }
 

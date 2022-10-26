@@ -6,21 +6,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>菜雞筆記</title>
     <link rel="stylesheet" href="./lib/bootstrap/dist/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="./index.html.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined">
+    <link rel="stylesheet" href="./index.html.css?v=20221026" />
 </head>
 
 <body>
     <header class="sticky-top">
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm border-bottom box-shadow mb-3 list-group-item-info">
+        <nav class="navbar navbar-expand-lg navbar-toggleable-lg border-bottom box-shadow mb-3 list-group-item-info">
             <div class="container-fluid">
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse"
                     aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon">▼</span>展開
+                    <div class="d-flex align-items-center">
+                        <span class="material-icons-outlined me-2">
+                            keyboard_arrow_down
+                        </span>展開/收合
+                    </div>
                 </button>
-                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+                <div class="navbar-collapse collapse d-lg-inline-flex justify-content-between">
                     <ul class="navbar-nav flex-grow-1">
                         <li class="nav-item text-nowrap">
-                            <a href="#" class="nav-link text-dark">首頁</a>
+                            <a href="#" class="nav-link text-dark d-flex align-items-center" title="首頁">
+                                <span class="material-icons-outlined me-2">
+                                    home
+                                </span>首頁
+                            </a>
                         </li>
                         <li class="nav-item text-nowrap">
                             <a href="#CSharp" class="nav-link text-dark">C#</a>
@@ -35,7 +45,11 @@
                             <a href="#SQL" class="nav-link text-dark">SQL</a>
                         </li>
                     </ul>
-                    <div class="text-end text-nowrap">菜雞的開發筆記</div>
+                    <div class="text-end text-nowrap d-flex align-items-center">
+                        <span class="material-icons-outlined me-2">
+                            description
+                        </span>菜雞的開發筆記
+                    </div>
                 </div>
             </div>
         </nav>
@@ -46,11 +60,23 @@
                 <div class="col">
                     <p>寫給自己看der~</p>
                 </div>
-                <div class="col-auto">
+                <div class="col-auto ms-auto">
                     <button type="button" class="btn list-group-item-success" data-bs-toggle="modal"
                         data-bs-target="#staticBackdrop">● 測試</button>
-                    <button type="button" class="btn list-group-item-success" id="showAllCollapse">▼ 全部展開</button>
-                    <button type="button" class="btn list-group-item-success" id="hideAllCollapse">▲ 全部收合</button>
+                    <button type="button" class="btn list-group-item-success" id="showAllCollapse">
+                        <div class="d-flex align-items-center">
+                            <span class="material-icons-outlined me-2">
+                                unfold_more
+                            </span>全部展開
+                        </div>
+                    </button>
+                    <button type="button" class="btn list-group-item-success" id="hideAllCollapse">
+                        <div class="d-flex align-items-center">
+                            <span class="material-icons-outlined me-2">
+                                unfold_less
+                            </span>全部收合
+                        </div>
+                    </button>
                 </div>
             </div>
             <div class="row mt-3" id="CSharp">
@@ -62,7 +88,7 @@
                             C#
                         </button>
                     </div>
-                    <div class="collapse show" id="cCSharp">
+                    <div class="collapse show collapseList" id="cCSharp">
                         <a href="#" class="list-group-item list-group-item-action">暫無資料</a>
                     </div>
                 </div>
@@ -76,7 +102,7 @@
                             HTML/CSS
                         </button>
                     </div>
-                    <div class="collapse show" id="cHTMLCSS">
+                    <div class="collapse show collapseList" id="cHTMLCSS">
                         <a href="#" class="list-group-item list-group-item-action">暫無資料</a>
                     </div>
                 </div>
@@ -89,7 +115,7 @@
                             JS
                         </button>
                     </div>
-                    <div class="collapse show" id="cJS">
+                    <div class="collapse show collapseList" id="cJS">
                         <a href="#" class="list-group-item list-group-item-action">暫無資料</a>
                     </div>
                 </div>
@@ -102,7 +128,7 @@
                             SQL
                         </button>
                     </div>
-                    <div class="collapse show" id="cSQL">
+                    <div class="collapse show collapseList" id="cSQL">
                         <a href="#" class="d-flex justify-content-between list-group-item list-group-item-action">
                             <span class="">test</span>
                             <span class="tw-bold">2022-10-24</span>
@@ -119,46 +145,51 @@
                             下次一定 - TODO
                         </button>
                     </div>
-                    <div class="collapse show" id="cTODO">
+                    <div class="collapse show collapseList" id="cTODO">
+                        <a href="#" class="d-flex justify-content-between list-group-item list-group-item-action">
+                            <span
+                                class="me-2">測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試</span>
+                            <span class="tw-bold text-nowrap ms-auto">2022-00-00</span>
+                        </a>
                         <a href="#" class="d-flex justify-content-between list-group-item list-group-item-action">
                             <span class="">android</span>
-                            <span class="tw-bold">????-??-??</span>
+                            <span class="tw-bold">2022-00-00</span>
                         </a>
                         <a href="#" class="d-flex justify-content-between list-group-item list-group-item-action">
                             <span class="">assembly</span>
-                            <span class="tw-bold">????-??-??</span>
+                            <span class="tw-bold">2022-00-00</span>
                         </a>
                         <a href="#" class="d-flex justify-content-between list-group-item list-group-item-action">
                             <span class="">C/C++</span>
-                            <span class="tw-bold">????-??-??</span>
+                            <span class="tw-bold">2022-00-00</span>
                         </a>
                         <a href="#" class="d-flex justify-content-between list-group-item list-group-item-action">
                             <span class="">GO</span>
-                            <span class="tw-bold">????-??-??</span>
+                            <span class="tw-bold">2022-00-00</span>
                         </a>
                         <a href="#" class="d-flex justify-content-between list-group-item list-group-item-action">
                             <span class="">kotlin</span>
-                            <span class="tw-bold">????-??-??</span>
+                            <span class="tw-bold">2022-00-00</span>
                         </a>
                         <a href="#" class="d-flex justify-content-between list-group-item list-group-item-action">
                             <span class="">linux</span>
-                            <span class="tw-bold">????-??-??</span>
+                            <span class="tw-bold">2022-00-00</span>
                         </a>
                         <a href="#" class="d-flex justify-content-between list-group-item list-group-item-action">
                             <span class="">php</span>
-                            <span class="tw-bold">????-??-??</span>
+                            <span class="tw-bold">2022-00-00</span>
                         </a>
                         <a href="#" class="d-flex justify-content-between list-group-item list-group-item-action">
                             <span class="">python</span>
-                            <span class="tw-bold">????-??-??</span>
+                            <span class="tw-bold">2022-00-00</span>
                         </a>
                         <a href="#" class="d-flex justify-content-between list-group-item list-group-item-action">
                             <span class="">R</span>
-                            <span class="tw-bold">????-??-??</span>
+                            <span class="tw-bold">2022-00-00</span>
                         </a>
                         <a href="#" class="d-flex justify-content-between list-group-item list-group-item-action">
                             <span class="">security</span>
-                            <span class="tw-bold">????-??-??</span>
+                            <span class="tw-bold">2022-00-00</span>
                         </a>
                     </div>
                 </div>
@@ -166,7 +197,9 @@
             <div class="row mt-3">
                 <div class="col"></div>
                 <div class="col-auto">
-                    <a href="#" class="btn list-group-item-success">▲ 返回頂部</a>
+                    <a href="#" class="btn list-group-item-success d-flex align-items-center">
+                        <span class="material-icons-outlined me-2">vertical_align_top</span>返回頂部
+                    </a>
                 </div>
             </div>
         </main>
@@ -177,30 +210,51 @@
             <div class="modal-content">
                 <div class="modal-header list-group-item-info">
                     <div class="modal-title" id="staticBackdropLabel">這裡是標題</div>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    <button type="button" class="ms-auto">testing...</button>
+                    <button type="button" class="btn-close ms-2" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body bodyWhite">
                     <div class="container-fluid" id="modalContent">
                     </div>
                 </div>
                 <div class="modal-footer list-group-item-dark">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">返回</button>
+                    <button type="button" class="btn btn-secondary d-flex align-items-center" data-bs-dismiss="modal">
+                        <span class="material-icons-outlined me-2">
+                            keyboard_return
+                        </span>返回
+                    </button>
                 </div>
             </div>
         </div>
     </div>
-    <footer class="border-top footer text-muted mt-5 list-group-item-dark">
-        <div class="container mt-5">
-            <div class="d-flex justify-content-between">
-                <span class="">&copy; 2022 - 版權沒有 如有錯誤請聯繫：<a
-                        href="mailto:uccu1478@gmail.com">uccu1478@gmail.com</a></span>
-                <span class="tw-bold">最後更新日期：2022-10-25</span>
+    <footer class="border-top footer text-muted py-5 list-group-item-dark">
+        <div class="container">
+            <div class="row d-flex align-items-center">
+                <div class="col">
+                    <span class="text-nowrap">
+                        &copy; 2022 - 版權沒有
+                    </span>
+                </div>
+                <div class="col-auto">
+                    <div class="row">
+                        <div class="col-12">
+                            <a href="mailto:uccu1478@gmail.com" class="d-flex align-items-center">
+                                <span class="material-icons-outlined me-2">
+                                    email
+                                </span>錯誤更正
+                            </a>
+                        </div>
+                        <div class="col-12">
+                            <span class="tw-bold text-nowrap">最後更新日期：2022-10-26</span>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </footer>
     <script src="./lib/jquery/dist/jquery.min.js"></script>
     <script src="./lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="./index.html.js"></script>
+    <script src="./index.html.js?v=20221026"></script>
 </body>
 
 </html>
