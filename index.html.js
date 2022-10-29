@@ -27,7 +27,7 @@ $(function () {
 
     // Copy in modal
     $('#share').click(function () {
-        let copyUrl = `${window.location.pathname}?p=${$('#path').val()}&f=${$('#file').val()}`;
+        let copyUrl = `${window.location.origin}${window.location.pathname}?p=${$('#path').val()}&f=${$('#file').val()}`;
         copy(copyUrl)
     });
 
@@ -57,6 +57,15 @@ function copy(text) {
 
 function openModal() {
     // try access html
-    $("#modalContent").load(`${window.location.pathname}/${$('#path').val()}/${$('#file').val()}.html`);
-    $('#staticBackdrop').modal('show');
+    // origin : "https://uccu1478.github.io"
+    // pathname : "/notes/"
+    $("#modalContent").load(`${window.location.origin}${window.location.pathname}${$('#path').val()}/${$('#file').val()}.html`, function (responseTxt, statusTxt, xhr) {
+        if (statusTxt == "success") {
+            $('#staticBackdrop').modal('show');
+        }
+        if (statusTxt == "error") {
+            // sweet alert here later...
+            alert("Oops!");
+        }
+    });
 }
