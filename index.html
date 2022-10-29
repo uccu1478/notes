@@ -6,43 +6,60 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>菜雞筆記</title>
     <link rel="stylesheet" href="./lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined">
-    <link rel="stylesheet" href="./index.html.css?v=20221026" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css">
+    <link rel="stylesheet" href="./index.html.css?v=20221029" />
 </head>
 
 <body>
     <header class="sticky-top">
-        <nav class="navbar navbar-expand-lg navbar-toggleable-lg border-bottom box-shadow mb-3 list-group-item-info">
+        <nav class="navbar navbar-expand-lg navbar-toggleable-lg border-bottom box-shadow list-group-item-info">
             <div class="container-fluid">
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse"
-                    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"
+                    id="navbarExpand">
                     <div class="d-flex align-items-center">
-                        <span class="material-icons-outlined me-2">
+                        <span class="material-icons-outlined me-2" id="navbarExpandIcon">
                             keyboard_arrow_down
-                        </span>展開/收合
+                        </span>
+                        <label id="navbarExpandText">展開</label>
                     </div>
                 </button>
-                <div class="navbar-collapse collapse d-lg-inline-flex justify-content-between">
+                <div class="navbar-collapse collapse d-lg-inline-flex justify-content-between" id="navbarCollapse">
                     <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item text-nowrap">
-                            <a href="#" class="nav-link text-dark d-flex align-items-center" title="首頁">
+                        <li class="nav-item text-nowrap btn">
+                            <a href="#" class="nav-link text-dark d-flex align-items-center collapseAfterClick"
+                                title="首頁">
                                 <span class="material-icons-outlined me-2">
                                     home
                                 </span>首頁
                             </a>
                         </li>
-                        <li class="nav-item text-nowrap">
-                            <a href="#CSharp" class="nav-link text-dark">C#</a>
+                        <li class="nav-item text-nowrap btn">
+                            <a href="#CSharp" class="nav-link text-dark d-flex align-items-center collapseAfterClick"
+                                title="CSharp">
+                                <i class="devicon-csharp-plain me-2"></i>
+                                C#
+                            </a>
                         </li>
-                        <li class="nav-item text-nowrap">
-                            <a href="#HTMLCSS" class="nav-link text-dark">HTML/CSS</a>
+                        <li class="nav-item text-nowrap btn">
+                            <a href="#HTMLCSS" class="nav-link text-dark d-flex align-items-center collapseAfterClick">
+                                <i class="devicon-html5-plain me-2"></i>HTML/<i class="devicon-css3-plain me-2"></i>CSS
+                            </a>
                         </li>
-                        <li class="nav-item text-nowrap">
-                            <a href="#JS" class="nav-link text-dark">JS</a>
+                        <li class="nav-item text-nowrap btn">
+                            <a href="#JS" class="nav-link text-dark d-flex align-items-center collapseAfterClick">
+                                <i class="devicon-javascript-plain me-2"></i>
+                                JS
+                            </a>
                         </li>
-                        <li class="nav-item text-nowrap">
-                            <a href="#SQL" class="nav-link text-dark">SQL</a>
+                        <li class="nav-item text-nowrap btn">
+                            <a href="#SQL" class="nav-link text-dark d-flex align-items-center collapseAfterClick">
+                                <i class="devicon-microsoftsqlserver-plain me-2"></i>
+                                SQL
+                            </a>
                         </li>
                     </ul>
                     <div class="text-end text-nowrap d-flex align-items-center">
@@ -60,9 +77,11 @@
                 <div class="col">
                     <p>寫給自己看der~</p>
                 </div>
-                <div class="col-auto ms-auto">
+                <div class="col-auto ms-auto me-0">
                     <button type="button" class="btn list-group-item-success" data-bs-toggle="modal"
                         data-bs-target="#staticBackdrop">● 測試</button>
+                </div>
+                <div class="col-auto ms-auto me-0">
                     <button type="button" class="btn list-group-item-success" id="showAllCollapse">
                         <div class="d-flex align-items-center">
                             <span class="material-icons-outlined me-2">
@@ -70,6 +89,8 @@
                             </span>全部展開
                         </div>
                     </button>
+                </div>
+                <div class="col-auto ms-auto me-0">
                     <button type="button" class="btn list-group-item-success" id="hideAllCollapse">
                         <div class="d-flex align-items-center">
                             <span class="material-icons-outlined me-2">
@@ -82,9 +103,10 @@
             <div class="row mt-3" id="CSharp">
                 <div class="col-12">
                     <div class="list-group">
-                        <button class="btn list-group-item list-group-item-warning" type="button"
-                            data-bs-toggle="collapse" data-bs-target="#cCSharp" aria-expanded="true"
+                        <button class="btn list-group-item list-group-item-warning d-flex align-items-center"
+                            type="button" data-bs-toggle="collapse" data-bs-target="#cCSharp" aria-expanded="true"
                             aria-controls="cCSharp">
+                            <i class="devicon-csharp-plain me-2"></i>
                             C#
                         </button>
                     </div>
@@ -96,10 +118,10 @@
             <div class="row mt-3" id="HTMLCSS">
                 <div class="col-12">
                     <div class="list-group">
-                        <button class="btn list-group-item list-group-item-warning" type="button"
-                            data-bs-toggle="collapse" data-bs-target="#cHTMLCSS" aria-expanded="true"
+                        <button class="btn list-group-item list-group-item-warning d-flex align-items-center"
+                            type="button" data-bs-toggle="collapse" data-bs-target="#cHTMLCSS" aria-expanded="true"
                             aria-controls="cHTMLCSS">
-                            HTML/CSS
+                            <i class="devicon-html5-plain me-2"></i>HTML/<i class="devicon-css3-plain me-2"></i>CSS
                         </button>
                     </div>
                     <div class="collapse show collapseList" id="cHTMLCSS">
@@ -110,8 +132,10 @@
             <div class="row mt-3" id="JS">
                 <div class="col-12">
                     <div class="list-group">
-                        <button class="btn list-group-item list-group-item-warning" type="button"
-                            data-bs-toggle="collapse" data-bs-target="#cJS" aria-expanded="true" aria-controls="cJS">
+                        <button class="btn list-group-item list-group-item-warning d-flex align-items-center"
+                            type="button" data-bs-toggle="collapse" data-bs-target="#cJS" aria-expanded="true"
+                            aria-controls="cJS">
+                            <i class="devicon-javascript-plain me-2"></i>
                             JS
                         </button>
                     </div>
@@ -123,8 +147,10 @@
             <div class="row mt-3" id="SQL">
                 <div class="col-12">
                     <div class="list-group">
-                        <button class="btn list-group-item list-group-item-warning" type="button"
-                            data-bs-toggle="collapse" data-bs-target="#cSQL" aria-expanded="true" aria-controls="cSQL">
+                        <button class="btn list-group-item list-group-item-warning d-flex align-items-center"
+                            type="button" data-bs-toggle="collapse" data-bs-target="#cSQL" aria-expanded="true"
+                            aria-controls="cSQL">
+                            <i class="devicon-microsoftsqlserver-plain me-2"></i>
                             SQL
                         </button>
                     </div>
@@ -210,8 +236,21 @@
             <div class="modal-content">
                 <div class="modal-header list-group-item-info">
                     <div class="modal-title" id="staticBackdropLabel">這裡是標題</div>
-                    <button type="button" class="ms-auto">testing...</button>
-                    <button type="button" class="btn-close ms-2" data-bs-dismiss="modal" aria-label="Close"></button>
+                    <button type="button" class="btn list-group-item-success ms-auto" id="share">
+                        <div class="d-flex align-items-center">
+                            <span class="material-icons-outlined me-2">
+                                share
+                            </span>複製本篇網址
+                        </div>
+                    </button>
+                    <button type="button" class="btn list-group-item-danger ms-2" data-bs-dismiss="modal"
+                        aria-label="Close">
+                        <div class="d-flex align-items-center">
+                            <span class="material-icons-outlined">
+                                close
+                            </span>關閉
+                        </div>
+                    </button>
                 </div>
                 <div class="modal-body bodyWhite">
                     <div class="container-fluid" id="modalContent">
@@ -238,14 +277,16 @@
                 <div class="col-auto">
                     <div class="row">
                         <div class="col-12">
-                            <a href="mailto:uccu1478@gmail.com" class="d-flex align-items-center">
-                                <span class="material-icons-outlined me-2">
-                                    email
-                                </span>錯誤更正
+                            <a href="mailto:uccu1478@gmail.com">
+                                <div class="d-flex align-items-center">
+                                    <span class="material-icons-outlined me-2 noDecoration">
+                                        email
+                                    </span>錯誤更正
+                                </div>
                             </a>
                         </div>
                         <div class="col-12">
-                            <span class="tw-bold text-nowrap">最後更新日期：2022-10-26</span>
+                            <span class="tw-bold text-nowrap">最後更新日期：2022-10-29</span>
                         </div>
                     </div>
                 </div>
@@ -254,7 +295,7 @@
     </footer>
     <script src="./lib/jquery/dist/jquery.min.js"></script>
     <script src="./lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="./index.html.js?v=20221026"></script>
+    <script src="./index.html.js?v=20221029"></script>
 </body>
 
 </html>
