@@ -57,6 +57,6 @@ function copy(text) {
 
 function openModal() {
     // try access html
-    $("#modalContent").load(`./${$('#path').val()}/${$('#file').val()}.html`);
+    $("#modalContent").load(`${window.location.pathname}/${$('#path').val()}/${$('#file').val()}.html`);
     $('#staticBackdrop').modal('show');
 }
