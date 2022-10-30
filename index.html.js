@@ -28,7 +28,7 @@ $(function () {
     // Copy in modal
     $('#share').click(function () {
         let copyUrl = `${window.location.origin}${window.location.pathname}?p=${$('#path').val()}&f=${$('#file').val()}`;
-        copy(copyUrl)
+        copy(copyUrl);
     });
 
     // IF url has p and f params, open modal
@@ -49,10 +49,31 @@ $(function () {
         $('#file').val($(this).data('file'));
         openModal();
     });
+
+    $('#bug_report').click(function () {
+        const subject = `bug_report:notes-${$('#file').val()}`;
+        window.location = `mailto:uccu1478@gmail.com?subject=${subject}&body=Hello!`;
+    });
 });
 
 function copy(text) {
     navigator.clipboard.writeText(text);
+    const Toast = Swal.mixin({
+        toast: true,
+        position: 'top-right',
+        iconColor: 'white',
+        customClass: {
+            popup: 'colored-toast'
+        },
+        showConfirmButton: false,
+        timer: 1000,
+        timerProgressBar: false,
+        showCloseButton: true
+    });
+    Toast.fire({
+        icon: 'success',
+        title: '已複製'
+    });
 }
 
 function openModal() {
@@ -64,8 +85,14 @@ function openModal() {
             $('#staticBackdrop').modal('show');
         }
         if (statusTxt == "error") {
-            // sweet alert here later...
-            alert("Oops!");
+            Swal.fire({
+                icon: 'error',
+                title: '發生錯誤',
+                text: '網址不正確或是本篇文章已移除',
+                footer: '<a href="mailto:uccu1478@gmail.com">錯誤更正</a>'
+            })
+            // for dev
+            // $('#staticBackdrop').modal('show');
         }
     });
 }
