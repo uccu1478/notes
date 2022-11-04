@@ -1,3 +1,85 @@
-<label class="h2">取得異動資料-OUTPUT</label>
+<div class="row">
+    <div class="col-12">
+        <label class="h2">取得新增資料之識別-OUTPUT</label>
+    </div>
+    <div class="col-12">
+        (使用 SQL Server 2019 Developer)
+    </div>
+</div>
+<div class="row mt-5">
+    <div class="col-12">
+        當需要取得剛剛insert的資料或識別(identity)、update前後的資料、delete的資料時可以使用OUTPUT
+    </div>
+    <div class="col-12">
+        異動後資料用inserted、異動前用deleted
+    </div>
+</div>
+<div class="row mt-5">
+    <div class="col">
+        假設現在有兩張表Player、Item
+        <pre>
+<code>
+CREATE TABLE [dbo].[Player](
+    [sid] [int] IDENTITY(1,1) NOT NULL,
+    [name] [nvarchar](255) NULL,
+    [hp] [int] NULL,
+    [atk] [int] NULL,
+    [def] [int] NULL,
+    CONSTRAINT [PK_Player] PRIMARY KEY CLUSTERED 
+    (
+        [sid] ASC
+    )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
 
-to do.
+CREATE TABLE [dbo].[Item](
+    [sid] [int] IDENTITY(1,1) NOT NULL,
+    [player_sid] [int] NULL,
+    [name] [nvarchar](255) NULL,
+    [description] [nvarchar](max) NULL,
+    CONSTRAINT [PK_Item] PRIMARY KEY CLUSTERED 
+    (
+        [sid] ASC
+    )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+GO
+</code>
+</pre>
+    </div>
+</div>
+<div class="row mt-5">
+    <div class="col">
+        要在新增player的同時給他配一把全村最好的劍
+        <pre>
+<code>
+--先宣告一個變數存output輸出的table
+declare @myTable table (player_sid int)
+--新增player 同時取得該player的sid
+insert into Player([name],[hp],[atk],[def])
+output inserted.sid into @myTable
+values('菜鳥',10,10,10)
+--給他一些基本裝備
+insert into Item([player_sid],[name],[description])
+select player_sid, '全村最好的劍', '雖然掛在山壁上可能會斷，但這已經是全村最好的一把劍了。' from @myTable
+--select出來看看
+select * from Player
+select * from Item
+</code>
+</pre>
+    </div>
+</div>
+<div class="row mt-5">
+    <div class="col">
+        參考資料
+        <ol>
+            <li>
+                <a
+                    href="https://learn.microsoft.com/en-us/sql/t-sql/queries/output-clause-transact-sql?view=sql-server-ver16">OUTPUT
+                    Clause (Transact-SQL)</a>
+            </li>
+            <li>
+                <a href="https://dotblogs.com.tw/supershowwei/2021/09/26/155836">[小菜一碟]用SQLServer的OUTPUT語法撈出剛剛刪除的資料</a>
+            </li>
+        </ol>
+    </div>
+</div>

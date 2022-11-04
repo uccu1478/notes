@@ -82,6 +82,7 @@ function openModal() {
     // pathname : "/notes/"
     $("#modalContent").load(`${window.location.origin}${window.location.pathname}${$('#path').val()}/${$('#file').val()}.html`, function (responseTxt, statusTxt, xhr) {
         if (statusTxt == "success") {
+            hljs.highlightAll();
             $('#staticBackdrop').modal('show');
         }
         if (statusTxt == "error") {
@@ -91,8 +92,6 @@ function openModal() {
                 text: '網址不正確或是本篇文章已移除',
                 footer: '<a href="mailto:uccu1478@gmail.com">錯誤更正</a>'
             })
-            // for dev
-            // $('#staticBackdrop').modal('show');
         }
     });
 }
