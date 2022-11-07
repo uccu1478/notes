@@ -16,11 +16,11 @@
         view長這樣子(index.cshtml)，使用.NET 6 MVC範本，js(index.cshtml.js)與cshtml放在同個資料夾(/Views/Home)
         <pre>
 <code>
-<input type="file" id="uploadFiles" multiple/>
-<button id="upload">上傳</button>
+&lt;input type="file" id="uploadFiles" multiple/&gt;
+&lt;button id="upload"&gt;上傳&lt;/button&gt;
 
 @section Scripts{
-    <script src=".\views\home\index.cshtml.js"></script>
+    &lt;script src=".\views\home\index.cshtml.js"&gt;&lt;/script&gt;
 }
 </code>
 </pre>
@@ -102,7 +102,7 @@ public async Task<IActionResult> Upload(IFormCollection formData)
         參考資料
         <ol>
             <li>
-                <a href="https://learn.microsoft.com/en-us/aspnet/core/mvc/models/file-uploads?view=aspnetcore-6.0">Upload files in ASP.NET Core</a>
+                <a href="https://learn.microsoft.com/en-us/aspnet/core/mvc/models/file-uploads?view=aspnetcore-6.0" target="_blank">Upload files in ASP.NET Core</a>
             </li>
         </ol>
     </div>
