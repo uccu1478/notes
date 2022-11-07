@@ -1,0 +1,109 @@
+<div class="row">
+    <div class="col-12">
+        <label class="h2">檔案上傳 .NET 6 MVC</label>
+    </div>
+    <div class="col-12">
+        (使用JQUERY傳送檔案至CONTROLLER)
+    </div>
+</div>
+<div class="row mt-5">
+    <div class="col-12">
+        將檔案放進input後，檔案連同要傳送的變數一起包進formdata整包POST出去，在Controller用IFormCollection參數接收
+    </div>
+</div>
+<div class="row mt-5">
+    <div class="col">
+        view長這樣子(index.cshtml)，使用.NET 6 MVC範本，js(index.cshtml.js)與cshtml放在同個資料夾(/Views/Home)
+        <pre>
+<code>
+<input type="file" id="uploadFiles" multiple/>
+<button id="upload">上傳</button>
+
+@section Scripts{
+    <script src=".\views\home\index.cshtml.js"></script>
+}
+</code>
+</pre>
+    </div>
+</div>
+<div class="row mt-5">
+    <div class="col">
+        js長這樣子(index.cshtml.js)
+        <pre>
+<code>
+$(function () {
+    // 上傳
+    $("#upload").click(function () {
+        let formData = new FormData();
+        // 可以帶參數
+        formData.append('name', '武腰柺');
+        // 把檔案包一包
+        let files = $('#uploadFiles')[0].files;
+        for (let i = 0; i < files.length; i++) {
+            formData.append('file', files[i]);
+        }
+
+        $.ajax({
+            'url': '/Api/Upload',
+            'type': 'POST',
+            'data': formData,
+            'contentType': false,
+            'processData': false,
+            success: function (result) {
+                // 清空input
+                $('#uploadFiles').val(null);
+                alert('success');
+                // 對回應的結果再作處理
+                console.log(result.count);
+            },
+            error: function () {
+                alert('error');
+            }
+        });
+    });
+});
+</code>
+</pre>
+    </div>
+</div>
+<div class="row mt-5">
+    <div class="col">
+        新增一個ApiController裡面加個function，參數用IFormCollection把整個formData接起來
+        <pre>
+<code>
+public async Task<IActionResult> Upload(IFormCollection formData)
+{
+    //接變數
+    var name=formData["name"];
+    //接檔案
+    var files = formData.Files;
+    long size = files.Sum(f => f.Length);
+    foreach (var formFile in files)
+    {
+        if (formFile.Length > 0)
+        {
+            // 預設暫存檔路徑差不多會長這樣 C:\Users\user\AppData\Local\Temp\tmpXXXX.tmp
+            var filePath = Path.GetTempFileName();
+            // 看你要寫去哪 若要寫到wwwroot以外 請修改program.cs，記得先建立資料夾(有機會再更新)
+            using var stream = System.IO.File.Create(filePath);
+            await formFile.CopyToAsync(stream);
+        }
+    }
+    //這邊可以串DB 看要幹啥
+
+    return Ok(new { count = files.Count, size });
+}
+</code>
+</pre>
+    </div>
+</div>
+<div class="row mt-5">
+    <div class="col">
+        參考資料
+        <ol>
+            <li>
+                <a href="https://learn.microsoft.com/en-us/aspnet/core/mvc/models/file-uploads?view=aspnetcore-6.0">Upload files in ASP.NET Core</a>
+            </li>
+        </ol>
+    </div>
+</div>
