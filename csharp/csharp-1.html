@@ -12,8 +12,10 @@
     </div>
 </div>
 <div class="row mt-5">
-    <div class="col">
+    <div class="col-12">
         view長這樣子(index.cshtml)，使用.NET 6 MVC範本，js(index.cshtml.js)與cshtml放在同個資料夾(/Views/Home)
+    </div>
+    <div class="col">
         <pre>
 <code>
 &lt;input type="file" id="uploadFiles" multiple/&gt;
@@ -27,8 +29,10 @@
     </div>
 </div>
 <div class="row mt-5">
-    <div class="col">
+    <div class="col-12">
         js長這樣子(index.cshtml.js)
+    </div>
+    <div class="col">
         <pre>
 <code>
 $(function () {
@@ -67,8 +71,10 @@ $(function () {
     </div>
 </div>
 <div class="row mt-5">
-    <div class="col">
+    <div class="col-12">
         新增一個ApiController裡面加個function，參數用IFormCollection把整個formData接起來
+    </div>
+    <div class="col">
         <pre>
 <code>
 [HttpPost]
@@ -99,28 +105,32 @@ public async Task<IActionResult> Upload(IFormCollection formData)
     </div>
 </div>
 <div class="row mt-5">
-    <div class="col">
+    <div class="col-12">
         若要在wwwroot以外使用檔案(下載、預覽等等) 請修改program.cs(記得先建立指定根目錄資料夾，否則發佈後會噴500.30)，<br />
         使用FileServer讓路徑可以像資料夾一樣存取(例如 xxx.xxx.x.xxx/FileServer/01/110222201/test.pdf)<br />
         Program.cs(請注意檔案存取權限問題)
+    </div>
+    <div class="col">
         <pre>
 <code>
 using Microsoft.Extensions.FileProviders;
 
-app.UseFileServer();//wwwroot folder
+app.UseFileServer();// /wwwroot
 FileServerOptions fileServerOptions = new FileServerOptions
 {
     FileProvider = new PhysicalFileProvider("D:\\FileServer"),
     RequestPath = "/FileServer"
 };
-app.UseFileServer(fileServerOptions); //this is for new Static Folder
+app.UseFileServer(fileServerOptions); // D:\\FileServer
 </code>
 </pre>
     </div>
 </div>
 <div class="row mt-5">
-    <div class="col">
+    <div class="col-12">
         最後修改過的Upload會長這樣
+    </div>
+    <div class="col">
         <pre>
 <code>
 [HttpPost]
