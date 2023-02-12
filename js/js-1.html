@@ -1,0 +1,91 @@
+<div class="row">
+    <div class="col-12">
+        <label class="h2">VueSelect</label>
+    </div>
+    <div class="col-12">
+        Vue3 - VueSelect
+    </div>
+</div>
+<div class="row mt-5">
+    <div class="col-12">
+        html
+    </div>
+    <div class="col-12">
+        :options放選項清單、label放文字(單一option是"{ title: "書名一" }"就放"title")
+    </div>
+    <div class="col">
+        <pre>
+<code>
+&lt;div id="app">
+    &lt;h1>Vue Select - Vue 3</h1>
+    &lt;br />{{param1}}
+    &lt;v-select :options="books" label="title" v-model="param1"></v-select>
+    &lt;br />{{param2}}
+    &lt;v-select :options="someData" v-model="param2"></v-select>
+    &lt;br />
+&lt;/div>
+</code>
+</pre>
+    </div>
+    <div class="col-12">
+        js
+    </div>
+    <div class="col">
+        <pre>
+<code>
+    var app;
+    const books = [
+        { title: "解決問題、創意湧現、高效表達的3×3系統思考法" },
+        { title: "文明的邏輯：人類與風險的博弈" },
+        { title: "逆思維：華頓商學院最具影響力的教授，突破人生盲點的全局思考" },
+        { title: "垃圾之書：面對人類將被廢棄物所廢棄的事實與行動" },
+    ];//這個是博客來某天的排行榜 不要在意書名
+    const someData = { n1: '11', n2: '22', n3: '33' };
+    
+    $(function () {
+        app = Vue.createApp({
+            components: {
+                vSelect: window["vue-select"] // Vue3在這用vue-select
+            },
+            data() {
+                return {
+                    books: books,
+                    someData: Object.keys(someData),
+                    param1: '',
+                    param2: '',
+                };
+            },
+        }).mount("#app");
+    });
+</code>
+</pre>
+    </div>
+</div>
+<div class="row mt-5">
+    <div class="col">
+        完整程式碼範例
+        <ul>
+            <li>
+                <a href="https://github.com/uccu1478/VueSelect"
+                    target="_blank">https://github.com/uccu1478/VueSelect</a>
+            </li>
+        </ul>
+    </div>
+</div>
+<div class="row mt-5">
+    <div class="col">
+        參考資料
+        <ol>
+            <li>
+                <a href="https://vue-select.org/" target="_blank">https://vue-select.org/</a>
+            </li>
+            <li>
+                <a href="https://vuejs.org/" target="_blank">https://vuejs.org/</a>
+            </li>
+            <li>
+                <a href="https://muki.tw/tech/vue/vue-select-associated-dropdown/" target="_blank">用 VUE 套件 v-select
+                    製作關聯台灣鄉鎮市區的下拉選單</a>
+            </li>
+        </ol>
+    </div>
+</div>

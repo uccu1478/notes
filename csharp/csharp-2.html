@@ -1,0 +1,51 @@
+<div class="row">
+    <div class="col-12">
+        <label class="h2">檔案上傳 WinForm 上傳PDF</label>
+    </div>
+</div>
+<div class="row mt-5">
+    <div class="col-12">
+        使用HttpClient Post FormData至API
+    </div>
+    <div class="col">
+        <pre>
+<code>
+HttpClient client = new HttpClient();
+var multiForm = new MultipartFormDataContent();
+
+// 在FormData中夾帶變數
+multiForm.Add(new StringContent("111"), "Year");
+multiForm.Add(new StringContent("1050101"), "ScanDate");
+
+// 在FormData中夾帶檔案
+FileStream fs = File.OpenRead(label1.Text);//label1.Text這邊是完整檔案路徑
+var streamContent = new StreamContent(fs);
+var fileContent = new ByteArrayContent(await streamContent.ReadAsByteArrayAsync());//轉成ByteArray給FormData用
+fileContent.Headers.ContentType = MediaTypeHeaderValue.Parse("multipart/form-data");//指定Header
+multiForm.Add(fileContent, "files", Path.GetFileName(label1.Text));//加入FormData
+
+var url = "https://localhost:44349/api/uploadpdf";//API路徑
+using var response = await client.PostAsync(url, multiForm);//POST
+if (response.IsSuccessStatusCode)
+{
+    MessageBox.Show("Api Suucess");
+}
+else
+{
+    MessageBox.Show("Api Error");
+}
+</code>
+</pre>
+    </div>
+</div>
+<div class="row mt-5">
+    <div class="col">
+        完整程式碼範例
+        <ul>
+            <li>
+                <a href="https://github.com/uccu1478/WinFormsAppUploadPDF"
+                    target="_blank">https://github.com/uccu1478/WinFormsAppUploadPDF</a>
+            </li>
+        </ul>
+    </div>
+</div>
