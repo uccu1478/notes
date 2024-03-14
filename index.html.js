@@ -83,6 +83,7 @@ function openModal() {
     $("#modalContent").load(`${window.location.origin}${window.location.pathname}${$('#path').val()}/${$('#file').val()}.html`, function (responseTxt, statusTxt, xhr) {
         if (statusTxt == "success") {
             hljs.highlightAll();
+            setGist();
             $('#staticBackdrop').modal('show');
         }
         if (statusTxt == "error") {
@@ -94,4 +95,20 @@ function openModal() {
             })
         }
     });
+}
+
+// gist script 使用document.write 不支援動態網頁
+function setGist() {
+    var $gists = $('script[src^="https://gist.github.com/"]');
+    if ($gists.length) {
+        $gists.each(function () {
+            var $this = $(this);
+            $.getJSON($this.attr('src') + 'on?callback=?', function (data) {
+                $this.replaceWith($(data.div));
+                $head = $('head');
+                if ($('link[rel="stylesheet"][href="' + data.stylesheet + '"]').length < 1)
+                    $head.append('<link rel="stylesheet" href="' + data.stylesheet + '" type="text/css" />');
+            });
+        });
+    }
 }
