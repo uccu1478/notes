@@ -15,93 +15,24 @@
     <div class="col-12">
         view長這樣子(index.cshtml)，使用.NET 6 MVC範本，js(index.cshtml.js)與cshtml放在同個資料夾(/Views/Home)
     </div>
-    <div class="col">
-        <pre>
-<code>
-&lt;input type="file" id="uploadFiles" multiple/&gt;
-&lt;button id="upload"&gt;上傳&lt;/button&gt;
-
-@section Scripts{
-    &lt;script src=".\views\home\index.cshtml.js"&gt;&lt;/script&gt;
-}
-</code>
-</pre>
+    <div class="col-12">
+        <script src="https://gist.github.com/uccu1478/974008cfca66138a4fbd63314e9b046e.js"></script>
     </div>
 </div>
 <div class="row mt-5">
     <div class="col-12">
         js長這樣子(index.cshtml.js)
     </div>
-    <div class="col">
-        <pre>
-<code>
-$(function () {
-    // 上傳
-    $("#upload").click(function () {
-        let formData = new FormData();
-        // 可以帶參數
-        formData.append('name', '武腰柺');
-        // 把檔案包一包
-        let files = $('#uploadFiles')[0].files;
-        for (let i = 0; i < files.length; i++) {
-            formData.append('file', files[i]);
-        }
-
-        $.ajax({
-            'url': '/Api/Upload',
-            'type': 'POST',
-            'data': formData,
-            'contentType': false,
-            'processData': false,
-            success: function (result) {
-                // 清空input
-                $('#uploadFiles').val(null);
-                alert('success');
-                // 對回應的結果再作處理
-                console.log(result.count);
-            },
-            error: function () {
-                alert('error');
-            }
-        });
-    });
-});
-</code>
-</pre>
+    <div class="col-12">
+        <script src="https://gist.github.com/uccu1478/37fc7e942ccef1809732efd4164cf149.js"></script>
     </div>
 </div>
 <div class="row mt-5">
     <div class="col-12">
         新增一個ApiController裡面加個function，參數用IFormCollection把整個formData接起來
     </div>
-    <div class="col">
-        <pre>
-<code>
-[HttpPost]
-public async Task<IActionResult> Upload(IFormCollection formData)
-{
-    //接變數
-    var name=formData["name"];
-    //接檔案
-    var files = formData.Files;
-    long size = files.Sum(f => f.Length);
-    foreach (var formFile in files)
-    {
-        if (formFile.Length > 0)
-        {
-            // 預設暫存檔路徑差不多會長這樣 C:\Users\user\AppData\Local\Temp\tmpXXXX.tmp
-            var filePath = Path.GetTempFileName();
-            // 看你要寫去哪
-            using var stream = System.IO.File.Create(filePath);
-            await formFile.CopyToAsync(stream);
-        }
-    }
-    //這邊可以串DB 看要幹啥
-
-    return Ok(new { count = files.Count, size });
-}
-</code>
-</pre>
+    <div class="col-12">
+        <script src="https://gist.github.com/uccu1478/9ff2dc5a4837f5cdb076154df67238c8.js"></script>
     </div>
 </div>
 <div class="row mt-5">
@@ -110,69 +41,20 @@ public async Task<IActionResult> Upload(IFormCollection formData)
         使用FileServer讓路徑可以像資料夾一樣存取(例如 xxx.xxx.x.xxx/FileServer/01/110222201/test.pdf)<br />
         Program.cs(請注意檔案存取權限問題)
     </div>
-    <div class="col">
-        <pre>
-<code>
-using Microsoft.Extensions.FileProviders;
-
-app.UseFileServer();// /wwwroot
-FileServerOptions fileServerOptions = new FileServerOptions
-{
-    FileProvider = new PhysicalFileProvider("D:\\FileServer"),
-    RequestPath = "/FileServer"
-};
-app.UseFileServer(fileServerOptions); // D:\\FileServer
-</code>
-</pre>
+    <div class="col-12">
+        <script src="https://gist.github.com/uccu1478/4d7c665e80d94360482bea0ca161d8b4.js"></script>
     </div>
 </div>
 <div class="row mt-5">
     <div class="col-12">
         最後修改過的Upload會長這樣
     </div>
-    <div class="col">
-        <pre>
-<code>
-[HttpPost]
-public async Task<IActionResult> Upload(IFormCollection formData)
-{
-    string name=formData["name"];
-    string caseno = formData["CaseNo"];//假設你有POST編號
-    string folder = caseno.Substring(caseno.Length - 2);//資料量大時做分層
-    string folderPath = Path.Combine("D:\\FileServer", folder, caseno);
-    string dbFolderPath = Path.Combine("\\FileServer", folder, caseno);
-    Directory.CreateDirectory(folderPath);//若無則建立(根目錄必須先建立，此範例為D:\\FileServer)
-    IFormFileCollection files = formData.Files;
-
-    long size = files.Sum(f => f.Length);
-    foreach (var file in files)
-    {
-        if (file.Length > 0)
-        {
-            // only accept .pdf file
-            if (file.FileName.Substring(file.FileName.LastIndexOf(".")).ToLower() != ".pdf")
-            {
-                continue;
-            }
-            // Path.GetRandomFileName() xxxxxxxx.xxx 不要寫user上傳的檔名
-            string newFileName = Path.GetRandomFileName() + ".pdf";
-            string filePath = Path.Combine(folderPath, newFileName);
-            string dbFilePath = Path.Combine(dbFolderPath, newFileName);
-            using var stream = System.IO.File.Create(filePath);
-            await file.CopyToAsync(stream);
-
-            // 串db紀錄
-            // UpdateData();
-        }
-    }
-    return Ok(new { count = files.Count, size });
-}
-</code>
-</pre>
+    <div class="col-12">
+        <script src="https://gist.github.com/uccu1478/424f60159644f1454c3711756e5fa571.js"></script>
     </div>
 </div>
 <div class="row mt-5">
-    <div class="col">
+    <div class="col-12">
         參考資料
         <ol>
             <li>

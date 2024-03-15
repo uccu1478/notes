@@ -82,7 +82,6 @@ function openModal() {
     // pathname : "/notes/"
     $("#modalContent").load(`${window.location.origin}${window.location.pathname}${$('#path').val()}/${$('#file').val()}.html`, function (responseTxt, statusTxt, xhr) {
         if (statusTxt == "success") {
-            hljs.highlightAll();
             setGist();
             $('#staticBackdrop').modal('show');
         }
@@ -103,11 +102,10 @@ function setGist() {
     if ($gists.length) {
         $gists.each(function () {
             var $this = $(this);
-            $.getJSON($this.attr('src') + 'on?callback=?', function (data) {
-                $this.replaceWith($(data.div));
-                $head = $('head');
+            $.getJSON($this.attr('src') + 'on?callback=?', data => {
                 if ($('link[rel="stylesheet"][href="' + data.stylesheet + '"]').length < 1)
-                    $head.append('<link rel="stylesheet" href="' + data.stylesheet + '" type="text/css" />');
+                    $('head').append('<link rel="stylesheet" href="' + data.stylesheet + '" type="text/css" />');
+                $this.replaceWith($(data.div));
             });
         });
     }
