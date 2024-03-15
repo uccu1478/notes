@@ -1,11 +1,16 @@
 <div class="row">
     <div class="col-12">
-        <label class="h2">動態嵌入Gist</label>
+        <label class="fs-2">動態嵌入Gist</label>
     </div>
 </div>
 <div class="row mt-5">
     <div class="col-12">
-        gist script 使用document.write 不支援動態網頁
+        <label class="fs-6 text-break">gist script 使用document.write 不支援動態網頁</label>
+        <label class="fs-6 text-break">載入後查詢src開頭為https://gist.github.com/的script標籤</label>
+        <label class="fs-6 text-break">對每一個做getJSON，url參數.js改成.json?callback=?</label>
+        <label class="fs-6 text-break">得到Content-Type: application/json; charset=utf-8</label>
+        <label class="fs-6 text-break">取出css加入head</label>
+        <label class="fs-6 text-break">取出div取代原先script標籤</label>
     </div>
     <div class="col-12">
         <script src="https://gist.github.com/uccu1478/041c2bf55b9e41319af5839ec757e6a1.js"></script>
@@ -13,8 +18,8 @@
 </div>
 <div class="row mt-5">
     <div class="col-12">
-        參考資料
-        <ol>
+        <label class="fs-6 text-break">參考資料</label>
+        <ol class="fs-6 text-break">
             <li>
                 <a href="https://gist.github.com/thomasmb/7132605#file-ajax-gist-embed-js"
                     target="_blank">thomasmb/ajax-gist-embed.js</a>

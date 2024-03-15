@@ -1,19 +1,28 @@
 <div class="row">
     <div class="col-12">
-        <label class="h2">檔案上傳 .NET 6 MVC</label>
+        <label class="fs-2">檔案上傳 .NET 6 MVC</label>
     </div>
     <div class="col-12">
-        (使用JQUERY傳送檔案至CONTROLLER)
-    </div>
-</div>
-<div class="row mt-5">
-    <div class="col-12">
-        將檔案放進input後，檔案連同要傳送的變數一起包進formdata整包POST出去，在Controller用IFormCollection參數接收
+        <label class="fs-6 text-break">使用JQUERY傳送檔案至CONTROLLER</label>
     </div>
 </div>
 <div class="row mt-5">
     <div class="col-12">
-        view長這樣子(index.cshtml)，使用.NET 6 MVC範本，js(index.cshtml.js)與cshtml放在同個資料夾(/Views/Home)
+        <label class="fs-6 text-break">將檔案放進input後</label>
+    </div>
+    <div class="col-12">
+        <label class="fs-6 text-break">檔案連同要傳送的變數一起包進formdata整包POST出去</label>
+    </div>
+    <div class="col-12">
+        <label class="fs-6 text-break">在Controller用IFormCollection參數接收</label>
+    </div>
+</div>
+<div class="row mt-5">
+    <div class="col-12">
+        <label class="fs-6 text-break">使用.NET 6 MVC範本，index.cshtml與index.cshtml.js放在同個資料夾(/Views/Home)</label>
+    </div>
+    <div class="col-12">
+        <label class="fs-6 text-break">view長這樣子(index.cshtml)</label>
     </div>
     <div class="col-12">
         <script src="https://gist.github.com/uccu1478/974008cfca66138a4fbd63314e9b046e.js"></script>
@@ -21,7 +30,7 @@
 </div>
 <div class="row mt-5">
     <div class="col-12">
-        js長這樣子(index.cshtml.js)
+        <label class="fs-6 text-break">js長這樣子(index.cshtml.js)</label>
     </div>
     <div class="col-12">
         <script src="https://gist.github.com/uccu1478/37fc7e942ccef1809732efd4164cf149.js"></script>
@@ -29,7 +38,10 @@
 </div>
 <div class="row mt-5">
     <div class="col-12">
-        新增一個ApiController裡面加個function，參數用IFormCollection把整個formData接起來
+        <label class="fs-6 text-break">新增一個ApiController裡面加個function</label>
+    </div>
+    <div class="col-12">
+        <label class="fs-6 text-break">參數用IFormCollection把整個formData接起來</label>
     </div>
     <div class="col-12">
         <script src="https://gist.github.com/uccu1478/9ff2dc5a4837f5cdb076154df67238c8.js"></script>
@@ -37,8 +49,18 @@
 </div>
 <div class="row mt-5">
     <div class="col-12">
-        <label class="fs-6 text-break">若要在wwwroot以外使用檔案(下載、預覽等等)請修改program.cs(記得先建立指定根目錄資料夾，否則發佈後會噴500.30)，</label>
-        <label class="fs-6 text-break">使用FileServer讓路徑可以像資料夾一樣存取(例如 xxx.xxx.x.xxx/FileServer/01/110222201/test.pdf)</label>
+        <label class="fs-6 text-break">若要在wwwroot以外使用檔案(下載、預覽等等)請修改program.cs</label>
+    </div>
+    <div class="col-12">
+        <label class="fs-6 text-break">記得先建立指定根目錄資料夾，否則發佈後IIS會噴500.30</label>
+    </div>
+    <div class="col-12">
+        <label class="fs-6 text-break">使用FileServer讓路徑可以像資料夾一樣存取</label>
+    </div>
+    <div class="col-12">
+        <label class="fs-6 text-break">如 xxx.xxx.x.xxx/FileServer/01/110222201/test.pdf</label>
+    </div>
+    <div class="col-12">
         <label class="fs-6 text-break">Program.cs(請注意檔案存取權限問題)</label>
     </div>
     <div class="col-12">
@@ -47,7 +69,7 @@
 </div>
 <div class="row mt-5">
     <div class="col-12">
-        最後修改過的Upload會長這樣
+        <label class="fs-6 text-break">最後修改過的Upload會長這樣</label>
     </div>
     <div class="col-12">
         <script src="https://gist.github.com/uccu1478/424f60159644f1454c3711756e5fa571.js"></script>
@@ -55,8 +77,8 @@
 </div>
 <div class="row mt-5">
     <div class="col-12">
-        參考資料
-        <ol>
+        <label class="fs-6 text-break">參考資料</label>
+        <ol class="fs-6 text-break">
             <li>
                 <a href="https://learn.microsoft.com/en-us/aspnet/core/mvc/models/file-uploads?view=aspnetcore-6.0"
                     target="_blank">Upload files in ASP.NET Core</a>

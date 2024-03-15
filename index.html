@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>菜雞筆記</title>
+    <title>筆記</title>
     <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
     <link rel="stylesheet" href="./lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined">
@@ -67,7 +67,8 @@
                     <div class="text-end text-nowrap d-flex align-items-center">
                         <span class="material-icons-outlined me-2">
                             description
-                        </span>菜雞的開發筆記
+                        </span>
+                        <label class="fs-6 text-break">筆記</label>
                     </div>
                 </div>
             </div>
@@ -79,23 +80,21 @@
         <main role="main" class="pb-3">
             <div class="row mt-3" id="toptools">
                 <div class="col-12">
-                    <p>做個紀錄</p>
+                    <label class="fs-4 text-break">做個紀錄</label>
                 </div>
                 <div class="col-auto ms-auto me-0">
                     <button type="button" class="btn list-group-item-success" id="showAllCollapse">
                         <div class="d-flex align-items-center">
-                            <span class="material-icons-outlined me-2">
-                                unfold_more
-                            </span>全部展開
+                            <span class="material-icons-outlined me-0">unfold_more</span>
+                            <label class="fs-6 text-break">全部展開</label>
                         </div>
                     </button>
                 </div>
-                <div class="col-auto ms-2 me-0">
+                <div class="col-auto ms-0 me-0">
                     <button type="button" class="btn list-group-item-success" id="hideAllCollapse">
                         <div class="d-flex align-items-center">
-                            <span class="material-icons-outlined me-2">
-                                unfold_less
-                            </span>全部收合
+                            <span class="material-icons-outlined me-0">unfold_less</span>
+                            <label class="fs-6 text-break">全部收合</label>
                         </div>
                     </button>
                 </div>
@@ -114,21 +113,21 @@
                         <button class="d-flex justify-content-between list-group-item list-group-item-action openModal"
                             data-path="csharp" data-file="csharp-1">
                             <span class="">1. 檔案上傳 .NET 6 MVC</span>
-                            <span class="tw-bold">2022-11-08</span>
+                            <span class="text-nowrap tw-bold">2022-11-08</span>
                         </button>
                     </div>
                     <div class="collapse show collapseList" id="cCSharp">
                         <button class="d-flex justify-content-between list-group-item list-group-item-action openModal"
                             data-path="csharp" data-file="csharp-2">
                             <span class="">2. 檔案上傳 WinForm 上傳PDF</span>
-                            <span class="tw-bold">2023-02-12</span>
+                            <span class="text-nowrap tw-bold">2023-02-12</span>
                         </button>
                     </div>
                     <div class="collapse show collapseList" id="cCSharp">
                         <button class="d-flex justify-content-between list-group-item list-group-item-action openModal"
                             data-path="csharp" data-file="csharp-3">
                             <span class="">3. Blazor OCR</span>
-                            <span class="tw-bold">2023-02-12</span>
+                            <span class="text-nowrap tw-bold">2023-02-12</span>
                         </button>
                     </div>
                 </div>
@@ -147,14 +146,14 @@
                         <button class="d-flex justify-content-between list-group-item list-group-item-action openModal"
                             data-path="js" data-file="js-1">
                             <span class="">1. VueSelect</span>
-                            <span class="tw-bold">2023-02-12</span>
+                            <span class="text-nowrap tw-bold">2023-02-12</span>
                         </button>
                     </div>
                     <div class="collapse show collapseList" id="cJS">
                         <button class="d-flex justify-content-between list-group-item list-group-item-action openModal"
                             data-path="js" data-file="js-2">
                             <span class="">2. 動態嵌入Gist</span>
-                            <span class="tw-bold">2024-03-14</span>
+                            <span class="text-nowrap tw-bold">2024-03-14</span>
                         </button>
                     </div>
                 </div>
@@ -173,7 +172,7 @@
                         <button class="d-flex justify-content-between list-group-item list-group-item-action openModal"
                             data-path="sql" data-file="sql-1">
                             <span class="">1. 取得新增資料之識別-OUTPUT</span>
-                            <span class="tw-bold">2022-11-04</span>
+                            <span class="text-nowrap tw-bold">2022-11-04</span>
                         </button>
                     </div>
                 </div>
@@ -191,14 +190,14 @@
                         <button class="d-flex justify-content-between list-group-item list-group-item-action openModal"
                             data-path="lc" data-file="lc-1">
                             <span class="">1. Two Sum</span>
-                            <span class="tw-bold">2024-03-14</span>
+                            <span class="text-nowrap tw-bold">2024-03-14</span>
                         </button>
                     </div>
                     <div class="collapse show collapseList" id="cLeetCode">
                         <button class="d-flex justify-content-between list-group-item list-group-item-action openModal"
                             data-path="lc" data-file="lc-2">
                             <span class="">2. Add Two Numbers</span>
-                            <span class="tw-bold">2024-03-15</span>
+                            <span class="text-nowrap tw-bold">2024-03-15</span>
                         </button>
                     </div>
                 </div>
@@ -207,7 +206,8 @@
                 <div class="col"></div>
                 <div class="col-auto">
                     <a href="#" class="btn list-group-item-success d-flex align-items-center">
-                        <span class="material-icons-outlined me-2">vertical_align_top</span>返回頂部
+                        <span class="material-icons-outlined me-0">vertical_align_top</span>
+                        <label class="fs-6 text-break">返回頂部</label>
                     </a>
                 </div>
             </div>
@@ -218,31 +218,34 @@
         <div class="modal-dialog modal-fullscreen modal-dialog-scrollable">
             <div class="modal-content">
                 <div class="modal-header list-group-item-info row">
-                    <div class="col-auto">
+                    <div class="col">
                         <div class="modal-title" id="staticBackdropLabel">
-                            <div class="text-nowrap d-flex align-items-center">
-                                <span class="material-icons-outlined me-2">
+                            <div class="text-break d-flex align-items-center">
+                                <span class="material-icons-outlined me-0">
                                     description
-                                </span>菜雞的開發筆記
+                                </span>
+                                <label class="fs-6 text-break">筆記</label>
                             </div>
                         </div>
                     </div>
                     <div class="col-auto ms-auto me-0">
                         <button type="button" class="btn list-group-item-success ms-auto" id="share">
                             <div class="text-nowrap d-flex align-items-center">
-                                <span class="material-icons-outlined me-2">
+                                <span class="material-icons-outlined me-0">
                                     share
-                                </span>複製本篇網址
+                                </span>
+                                <label class="fs-6 text-break">複製本篇網址</label>
                             </div>
                         </button>
                     </div>
                     <div class="col-auto ms-0 me-0">
-                        <button type="button" class="btn list-group-item-danger ms-2" data-bs-dismiss="modal"
+                        <button type="button" class="btn list-group-item-danger ms-0" data-bs-dismiss="modal"
                             aria-label="Close">
                             <div class="text-nowrap d-flex align-items-center">
                                 <span class="material-icons-outlined">
                                     close
-                                </span>關閉
+                                </span>
+                                <label class="fs-6 text-break">關閉</label>
                             </div>
                         </button>
                     </div>
@@ -254,9 +257,10 @@
                 <div class="modal-footer list-group-item-dark">
                     <button type="button" class="btn btn-danger d-flex align-items-center" id="bug_report">
                         <div class="d-flex align-items-center">
-                            <span class="material-icons-outlined me-2">
+                            <span class="material-icons-outlined me-0">
                                 bug_report
-                            </span>錯誤更正
+                            </span>
+                            <label class="fs-6 text-break">錯誤更正</label>
                         </div>
                     </button>
                 </div>
@@ -283,7 +287,7 @@
                             </a>
                         </div>
                         <div class="col-12">
-                            <span class="tw-bold text-nowrap">最後更新日期：2024-03-14</span>
+                            <span class="tw-bold text-nowrap">最後更新日期：2024-03-15</span>
                         </div>
                     </div>
                 </div>
