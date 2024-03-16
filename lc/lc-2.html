@@ -5,33 +5,74 @@
 </div>
 <div class="row mt-5">
     <div class="col-12">
-        <label class="fs-6 text-break">題意：給兩個ListNode*(singly-linked list)，相加，head為個位數</label>
+        <label class="fs-6 text-break">原題：</label>
     </div>
+    <div class="col-12">
+        <label class="fs-6 text-break">You are given two non-empty linked lists representing two non-negative integers.
+            The digits are stored in reverse order, and each of their nodes contains a single digit. Add the two numbers
+            and return the sum as a linked list.</label>
+    </div>
+    <div class="col-12">
+        <label class="fs-6 text-break">You may assume the two numbers do not contain any leading zero, except the number
+            0 itself.</label>
+    </div>
+</div>
+<div class="row mt-5">
+    <div class="col-12">
+        <label class="fs-6 text-break">題意：</label>
+    </div>
+    <div class="col-12">
+        <label class="fs-6 text-break">給兩個ListNode*(singly-linked list)，相加，head為個位數</label>
+    </div>
+</div>
+<div class="row mt-5">
     <div class="col-12">
         <label class="fs-6 text-break">輸入：兩個ListNode*</label>
     </div>
+</div>
+<div class="row mt-5">
     <div class="col-12">
         <label class="fs-6 text-break">輸出：ListNode*</label>
     </div>
+</div>
+<div class="row mt-5">
     <div class="col-12">
         <label class="fs-6 text-break">Testcase：</label>
         <ol class="fs-6 text-break">
-            <li>Input: l1 = [2,4,3], l2 = [5,6,4]
-                Output: [7,0,8]
-                Explanation: 342 + 465 = 807.
+            <li class="my-2">
+                <ul>
+                    <li>Input: l1 = [2,4,3], l2 = [5,6,4]</li>
+                    <li>Output: [7,0,8]</li>
+                    <li>Explanation: 342 + 465 = 807.</li>
+                </ul>
             </li>
-            <li>Input: l1 = [0], l2 = [0]
-                Output: [0]
+            <li class="my-2">
+                <ul>
+                    <li>Input: l1 = [0], l2 = [0]</li>
+                    <li>Output: [0]</li>
+                </ul>
             </li>
-            <li>Input: l1 = [9,9,9,9,9,9,9], l2 = [9,9,9,9]
-                Output: [8,9,9,9,0,0,0,1]
+            <li class="my-2">
+                <ul>
+                    <li>Input: l1 = [9,9,9,9,9,9,9], l2 = [9,9,9,9]</li>
+                    <li>Output: [8,9,9,9,0,0,0,1]</li>
+                </ul>
             </li>
         </ol>
     </div>
 </div>
 <div class="row mt-5">
     <div class="col-12">
-        <label class="fs-6 text-break">直覺解法，一個while跑完(耗時22ms，效能不佳)</label>
+        <label class="fs-6 text-break">解法1</label>
+    </div>
+    <div class="col-12">
+        <label class="fs-6 text-break">一個while跑完，利用他的ListNode(int x)</label>
+    </div>
+    <div class="col-12">
+        <label class="fs-6 text-break">最後那個head記得要delete掉</label>
+    </div>
+    <div class="col-12">
+        <label class="fs-6 text-break">15ms</label>
     </div>
     <div class="col-12">
         <script src="https://gist.github.com/uccu1478/cf9a046d3a8684932c08c20df1ffa851.js"></script>
