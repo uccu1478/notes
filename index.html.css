@@ -37,6 +37,17 @@ footer {
 .btn {
     vertical-align: middle;
     font-size: x-large;
+    transition: 0.25s;
+}
+
+.btn:hover,
+.btn:focus {
+    box-shadow: rgba(0, 0, 0, 0.25) 0 0.25em 0.5em, rgba(0, 0, 0, 0.22) 0 0.25em 0.25em;
+    transform: translateY(-0.2em);
+}
+
+.btn label {
+    cursor: pointer;
 }
 
 .modal-title {
@@ -45,8 +56,4 @@ footer {
 
 .bodyWhite {
     background-color: #EEEEEE;
-}
-
-a span.noDecoration {
-    text-decoration: none !important;
 }

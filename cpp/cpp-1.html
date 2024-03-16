@@ -1,0 +1,169 @@
+<div class="row">
+    <div class="col-12">
+        <label class="fs-2">C++單元測試</label>
+    </div>
+    <div class="col-12">
+        <label class="fs-6 text-break">環境</label>
+        <ul class="fs-6 text-break">
+            <li><label class="fs-6 text-break">Windows 10</label></li>
+            <li><label class="fs-6 text-break">Visual Studio 2022</label></li>
+            <li><label class="fs-6 text-break">Microsoft CppUnitTest framework</label></li>
+        </ul>
+    </div>
+</div>
+<div class="row mt-5">
+    <div class="col-12">
+        <label class="fs-6 text-break">基本設定</label>
+    </div>
+    <div class="col-12">
+        <ol class="fs-6 text-break">
+            <li><label class="fs-6 text-break">建一個C++方案</label></li>
+            <li><label class="fs-6 text-break">方案總管 > 方案上右鍵 > 加入 > 新增專案 > 原生單元測試專案</label></li>
+            <li><label class="fs-6 text-break">方案總管 > 單元測試專案(UnitTest1)-參考上右鍵 > 加入參考 > 勾選專案 > 確定</label></li>
+        </ol>
+    </div>
+    <div class="col-12">
+        <label class="fs-6 text-break">若要使用C++20，需在專案屬性個別設定(原專案及測試專案)</label>
+    </div>
+    <div class="col-12">
+        <label class="fs-6 text-break">方案總管 > 專案上右鍵 > 屬性 > 組態屬性 > C/C++ > 語言 > C++語言標準 > 選C++20/C++latest > 確定</label>
+    </div>
+</div>
+<div class="row mt-5">
+    <div class="col-12">
+        <label class="fs-6 text-break">架構(TestCPP方案)</label>
+        <ul class="fs-6 text-break">
+            <li>
+                <label class="fs-6 text-break">TestCPP</label>
+                <ul class="fs-6 text-break">
+                    <li><label class="fs-6 text-break">Solution.cpp</label></li>
+                    <li><label class="fs-6 text-break">Solution.h</label></li>
+                    <li><label class="fs-6 text-break">TestCPP.cpp</label></li>
+                </ul>
+            </li>
+            <li><label class="fs-6 text-break">UnitTest1</label>
+                <ul class="fs-6 text-break">
+                    <li><label class="fs-6 text-break">pch.cpp</label></li>
+                    <li><label class="fs-6 text-break">pch.h</label></li>
+                    <li><label class="fs-6 text-break">UnitTest1.cpp</label></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+</div>
+<div class="row mt-5">
+    <div class="col-12">
+        <label class="fs-6 text-break">先來看看 TestCPP/TestCPP.cpp</label>
+    </div>
+    <div class="col-12">
+        <label class="fs-6 text-break">裡面就放個main 經典Hello World</label>
+    </div>
+    <div class="col-12">
+        <label class="fs-6 text-break">但今天不會用到它</label>
+    </div>
+    <div class="col-12">
+        <script src="https://gist.github.com/uccu1478/9beac7910afd07ada208dae46a7063ff.js"></script>
+    </div>
+</div>
+<div class="row mt-5">
+    <div class="col-12">
+        <label class="fs-6 text-break">TestCPP/Solution.h</label>
+    </div>
+    <div class="col-12">
+        <label class="fs-6 text-break">要測試的class定義</label>
+    </div>
+    <div class="col-12">
+        <script src="https://gist.github.com/uccu1478/6b96dccfde4a46eec2074e875419e2ad.js"></script>
+    </div>
+</div>
+<div class="row mt-5">
+    <div class="col-12">
+        <label class="fs-6 text-break">TestCPP/Solution.cpp</label>
+    </div>
+    <div class="col-12">
+        <label class="fs-6 text-break">要測試的class實作</label>
+    </div>
+    <div class="col-12">
+        <label class="fs-6 text-break">眼熟嗎，沒錯就是leetcode第一題...</label>
+    </div>
+    <div class="col-12">
+        <script src="https://gist.github.com/uccu1478/2afb81b2ea67aca193353cf27507ff4a.js"></script>
+    </div>
+</div>
+<div class="row mt-5">
+    <div class="col-12">
+        <label class="fs-6 text-break">再來看 UnitTest1/pch.h</label>
+    </div>
+    <div class="col-12">
+        <label class="fs-6 text-break">總之就是把好用的想用的header file塞一塞</label>
+    </div>
+    <div class="col-12">
+        <label class="fs-6 text-break">例如algorithm</label>
+    </div>
+    <div class="col-12">
+        <script src="https://gist.github.com/uccu1478/61a88db1fa30dde42175ebe8a07a0805.js"></script>
+    </div>
+</div>
+<div class="row mt-5">
+    <div class="col-12">
+        <label class="fs-6 text-break">UnitTest1/pch.cpp</label>
+    </div>
+    <div class="col-12">
+        <label class="fs-6 text-break">今天不會用到它</label>
+    </div>
+    <div class="col-12">
+        <script src="https://gist.github.com/uccu1478/501b5cb658869ac79958c1741c94e633.js"></script>
+    </div>
+</div>
+<div class="row mt-5">
+    <div class="col-12">
+        <label class="fs-6 text-break">UnitTest1/UnitTest1.cpp</label>
+    </div>
+    <div class="col-12">
+        <label class="fs-6 text-break">測試的本體</label>
+        <ul class="fs-6 text-break">
+            <li><label class="fs-6 text-break">一次只測一項</label></li>
+            <li><label class="fs-6 text-break">3A原則(每個TestCase)</label>
+                <ul class="fs-6 text-break">
+                    <li><label class="fs-6 text-break">Arrange 設定條件與預期結果</label></li>
+                    <li><label class="fs-6 text-break">Act 執行測試</label></li>
+                    <li><label class="fs-6 text-break">Assert 驗證結果</label></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+    <div class="col-12">
+        <label class="fs-6 text-break">include必要檔案如Solution.cpp</label>
+    </div>
+    <div class="col-12">
+        <label class="fs-6 text-break">TEST_METHOD中若非static class需先new</label>
+    </div>
+    <div class="col-12">
+        <label class="fs-6 text-break">有特別說明不用排序的記得給它sort一下</label>
+    </div>
+    <div class="col-12">
+        <label class="fs-6 text-break">最後特別注意vector不可以用Assert::AreEqual()</label>
+    </div>
+    <div class="col-12">
+        <script src="https://gist.github.com/uccu1478/834bf263c3542b3bffc9a2783c9bf211.js"></script>
+    </div>
+</div>
+<div class="row mt-5">
+    <div class="col-12">
+        <label class="fs-6 text-break">最後~~</label>
+    </div>
+    <div class="col-12">
+        <label class="fs-6 text-break">方案總管 > 單元測試專案(UnitTest1)-參考上右鍵 > 執行測試</label>
+    </div>
+    <div class="col-12">
+        <label class="fs-6 text-break">就可以在測試總管看到啦!</label>
+    </div>
+</div>
+<div class="row mt-5">
+    <div class="col-12">
+        <label class="fs-6 text-break">完整程式碼範例</label>
+        <ul class="fs-6 text-break">
+            <li>待補...</li>
+        </ul>
+    </div>
+</div>
