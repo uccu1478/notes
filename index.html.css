@@ -57,3 +57,7 @@ footer {
 .bodyWhite {
     background-color: #EEEEEE;
 }
+
+li label {
+    vertical-align: top;
+}
