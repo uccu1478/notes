@@ -1,0 +1,114 @@
+<div class="row">
+    <div class="col-12">
+        <label class="fs-2">上架App至Google Play Store</label>
+    </div>
+    <div class="col-12">
+        <label class="fs-6 text-break">環境</label>
+        <ul class="fs-6 text-break">
+            <li><label class="fs-6 text-break">Windows 10</label></li>
+            <li><label class="fs-6 text-break">Android Studio</label></li>
+            <li><label class="fs-6 text-break">喜歡用IntelliJ IDEA也行，我覺得對新手很不友善</label></li>
+            <li><label class="fs-6 text-break">Android SDK (目前推薦32/33)</label></li>
+            <li><label class="fs-6 text-break">Virtual Device (裝你需要的，現在還有Resizable可以試)</label></li>
+        </ul>
+    </div>
+</div>
+<div class="row mt-5">
+    <div class="col-12">
+        <label class="fs-6 text-break">1. 新增專案</label>
+    </div>
+    <div class="col-12">
+        <label class="fs-6 text-break">File > New > New Project...</label>
+    </div>
+    <div class="col-12">
+        <label class="fs-6 text-break">類型選Phone and Tablet、Empty Activity</label>
+        <ol class="fs-6 text-break">
+            <li>
+                <label class="fs-6 text-break">Package name：這是要上play
+                    store用的，記得把example改掉(com.yourpackage.yourapplication)</label>
+            </li>
+            <li>
+                <label class="fs-6 text-break">Language：Kotlin(推薦)</label>
+            </li>
+            <li>
+                <label class="fs-6 text-break">Minimum SDK：上架後支援的最低系統版本，簡單的App沒有差</label>
+            </li>
+        </ol>
+    </div>
+</div>
+<div class="row mt-5">
+    <div class="col-12">
+        <label class="fs-6 text-break">2. 產生aab檔</label>
+    </div>
+    <div class="col-12">
+        <label class="fs-6 text-break">Build > Generate Signed Bundle / APK...</label>
+    </div>
+    <div class="col-12">
+        <label class="fs-6 text-break">選Android App Bundle</label>
+    </div>
+    <div class="col-12">
+        <ol class="fs-6 text-break">
+            <li>
+                <label class="fs-6 text-break">Module：選yourapplication.app.main</label>
+            </li>
+            <li>
+                <label class="fs-6 text-break">Key store password：金鑰密碼</label>
+            </li>
+            <li>
+                <label class="fs-6 text-break">Key alias：別名</label>
+            </li>
+            <li>
+                <label class="fs-6 text-break">Key password：同Key store password</label>
+            </li>
+            <li>
+                <label class="fs-6 text-break">勾選Export encrypted key for enrolling published apps in Google Play App
+                    Signing</label>
+            </li>
+        </ol>
+    </div>
+    <div class="col-12">
+        <label class="fs-6 text-break">選release</label>
+    </div>
+    <div class="col-12">
+        <label class="fs-6 text-break">檔案在專案下 /app/release/app-release.aab</label>
+    </div>
+</div>
+<div class="row mt-5">
+    <div class="col-12">
+        <label class="fs-6 text-break">3. Google Play Console</label>
+    </div>
+    <div class="col-12">
+        <label class="fs-6 text-break">要先註冊開發人員帳號，註冊費25還30美元忘了</label>
+    </div>
+    <div class="col-12">
+        <label class="fs-6 text-break">首頁 > 建立應用程式</label>
+    </div>
+    <div class="col-12">
+        <label class="fs-6 text-break">應用程式 > 資訊主頁 > 設定應用程式</label>
+        <ol class="fs-6 text-break">
+            <li>
+                <label class="fs-6 text-break">隱私權政策：這個最麻煩，我推薦用這個做<a href="https://www.privacypolicies.com/"
+                        target="_blank">privacypolicies</a></label>
+            </li>
+            <li>
+                <label class="fs-6 text-break">選取應用程式類別並提供詳細聯絡資料：要一張512x512的png(Play
+                    Store縮圖)、一張1024x512的png、2至8張螢幕截圖</label>
+            </li>
+        </ol>
+    </div>
+    <div class="col-12">
+        <label class="fs-6 text-break">全部填完後在應用程式 > 資訊主頁 > 建立並發布版本 > 將版本送交 Google 審查</label>
+    </div>
+    <div class="col-12">
+        <label class="fs-6 text-break">大功告成，過審會收到email(IARC Live Rating Notice)</label>
+    </div>
+</div>
+<div class="row mt-5">
+    <div class="col-12">
+        <label class="fs-6 text-break">4. 成品</label>
+    </div>
+    <div class="col-12">
+        <label class="fs-6 text-break"><a href="https://play.google.com/store/apps/details?id=jcchen1478.helper"
+                target="_blank">小幫手</a></label>
+    </div>
+</div>
