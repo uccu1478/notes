@@ -1,0 +1,93 @@
+<div class="row">
+    <div class="col-12">
+        <label class="fs-2">Windows 10 相片 應用程式消失</label>
+    </div>
+    <div class="col-12">
+        <label class="fs-6 text-break">環境</label>
+        <ul class="fs-6 text-break">
+            <li><label class="fs-6 text-break">Windows 10 專業版 22H2</label></li>
+            <li><label class="fs-6 text-break">組建 19045.4046</label></li>
+        </ul>
+    </div>
+</div>
+<div class="row mt-5">
+    <div class="col-12">
+        <label class="fs-6 text-break">使用Game Bar的錄影功能(Win+Alt+R)一次可以錄兩小時，此時若要剪取任意長度的片段就能使用Windows內建的相片(Microsoft Photos)其中的影片修剪功能(Ctrl+E)</label>
+    </div>
+    <div class="col-12">
+        <label class="fs-6 text-break">但在某次關機時被更新消失了...(我每次都是點延後更新的啊，又偷搞)</label>
+    </div>
+    <div class="col-12">
+        <label class="fs-6 text-break">以下附上成功修正的方法</label>
+    </div>
+</div>
+<div class="row mt-5">
+    <div class="col-12">
+        <label class="fs-6 text-break">Win+R > regedit 開啟登錄編輯程式</label>
+        <ol class="fs-6 text-break">
+            <li>
+                <label class="fs-6 text-break">路徑輸入
+                    HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows Photo Viewer\Capabilities\FileAssociations</label>
+            </li>
+            <li>
+                <label class="fs-6 text-break">右側數值區塊 右鍵 > 新增 > 字串值</label>
+            </li>
+            <li>
+                <label class="fs-6 text-break">名稱改為你要開啟的附檔名，如 .mp4</label>
+            </li>
+            <li>
+                <label class="fs-6 text-break">.mp4 右鍵 > 修改 > 數值資料 photoViewer.FileAssoc.Tiff >
+                    確定</label>
+            </li>
+        </ol>
+    </div>
+</div>
+<div class="row mt-5">
+    <div class="col-12">
+        <label class="fs-6 text-break">此時登錄編輯程式FileAssociations下應該會類似這樣</label>
+        <div class="table-responsive">
+            <table class="table fs-6 text-break">
+                <thead>
+                    <tr>
+                        <th scope="col">名稱</th>
+                        <th scope="col">類型</th>
+                        <th scope="col">資料</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>(預設值)</td>
+                        <td>REG_SZ</td>
+                        <td>(數值未設定)</td>
+                    </tr>
+                    <tr>
+                        <td>.mp4</td>
+                        <td>REG_SZ</td>
+                        <td>photoViewer.FileAssoc.Tiff</td>
+                    </tr>
+                    <tr>
+                        <td>.tif</td>
+                        <td>REG_SZ</td>
+                        <td>photoViewer.FileAssoc.Tiff</td>
+                    </tr>
+                    <tr>
+                        <td>.tiff</td>
+                        <td>REG_SZ</td>
+                        <td>photoViewer.FileAssoc.Tiff</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+<div class="row mt-5">
+    <div class="col-12">
+        <label class="fs-6 text-break">參考資料</label>
+        <ol class="fs-6 text-break">
+            <li>
+                <a href="https://answers.microsoft.com/zh-hant/windows/forum/all/windows-10/b04d2ebe-0d3a-4771-8ed5-ebba16d92099"
+                    target="_blank">Windows 10 沒有相片檢視器</a>
+            </li>
+        </ol>
+    </div>
+</div>
