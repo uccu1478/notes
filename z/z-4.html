@@ -1,0 +1,47 @@
+<div class="row">
+    <div class="col-12">
+        <label class="fs-2">判斷Endian</label>
+    </div>
+    <div class="col-12">
+        <label class="fs-6 text-break">只考慮"Little Endian"、"Big Endian"</label>
+    </div>
+</div>
+<div class="row mt-5">
+    <div class="col-12">
+        <label class="fs-6 text-break">利用union共享記憶體的特性</label>
+    </div>
+    <div class="col-12">
+        <label class="fs-6 text-break">設c.a在0x0000001C53BDF4B4到0x0000001C53BDF4B7</label>
+    </div>
+    <div class="col-12">
+        <label class="fs-6 text-break">則c.b在0x0000001C53BDF4B4</label>
+    </div>
+    <div class="col-12">
+        <label class="fs-6 text-break">因此將c.a設為1後，若c.b==1即為Little Endian</label>
+    </div>
+    <div class="col-12">
+        <label class="fs-6 text-break">若是Big Endian，則1會在0x0000001C53BDF4B7</label>
+    </div>
+    <div class="col-12">
+        <script src="https://gist.github.com/uccu1478/4af907f0d46b1c132e63c58935bb8e95.js"></script>
+    </div>
+</div>
+<div class="row mt-5">
+    <div class="col-12">
+        <label class="fs-6 text-break">參考資料</label>
+        <ol class="fs-6 text-break">
+            <li>
+                <ul>
+                    <li>練核心從裡強到外 全面了解Linux基礎架構</li>
+                    <li>1.1.2 p1-6</li>
+                    <li>作者：笨叔</li>
+                    <li>ISBN：9789865501921</li>
+                </ul>
+            </li>
+            <li>
+                <a href="https://samuel830209.medium.com/c-%E5%88%A4%E6%96%B7big-endian-or-little-endian-d90da2a95086"
+                    target="_blank">[C] 判斷Big-Endian or Little-Endian</a>
+            </li>
+        </ol>
+    </div>
+</div>
