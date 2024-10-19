@@ -1,0 +1,61 @@
+<div class="row">
+    <div class="col-12">
+        <label class="fs-2">RV1126 連接WiFi網路</label>
+    </div>
+</div>
+<div class="row mt-5">
+    <div class="col-12">
+        <label class="fs-6 text-break">首先要能連上RV1126</label>
+    </div>
+    <div class="col-12">
+        <label class="fs-6 text-break">透過USB debug port用screen或picocom等工具</label>
+    </div>
+    <div class="col-12">
+        <script src="https://gist.github.com/uccu1478/071e7dacd031659a32e7105842501a2e.js"></script>
+    </div>
+    <div class="col-12">
+        <label class="fs-6 text-break">picocom可以直接往上拉看歷史訊息，我覺得比screen好用</label>
+    </div>
+    <div class="col-12">
+        <label class="fs-6 text-break">連上後就是root，但只有shell沒有bash</label>
+    </div>
+</div>
+<div class="row mt-5">
+    <div class="col-12">
+        <label class="fs-6 text-break">檢查WiFi設定</label>
+    </div>
+    <div class="col-12">
+        <label class="fs-6 text-break">檢查下列檔案設定是否正確</label>
+    </div>
+    <div class="col-12">
+        <label class="fs-6 text-break">cat /etc/wpa_supplicant/wpa_supplicant.conf</label>
+    </div>
+    <div class="col-12">
+        <script src="https://gist.github.com/uccu1478/b3ac99c7bb17de211bef43d983efda9b.js"></script>
+    </div>
+    <div class="col-12">
+        <label class="fs-6 text-break">這個設定跑掉會一直跳錯誤訊息，無法掃描網路等等</label>
+    </div>
+</div>
+<div class="row mt-5">
+    <div class="col-12">
+        <label class="fs-6 text-break">啟動wpa</label>
+    </div>
+    <div class="col-12">
+        <script src="https://gist.github.com/uccu1478/9717c232699f98901464a21e5e200269.js"></script>
+    </div>
+    <div class="col-12">
+        <label class="fs-6 text-break">目前應該能在AP後台看到設備，但無法連接網路</label>
+    </div>
+</div>
+<div class="row mt-5">
+    <div class="col-12">
+        <label class="fs-6 text-break">手動取得ip</label>
+    </div>
+    <div class="col-12">
+        <script src="https://gist.github.com/uccu1478/b379e25363aa9dc5162e2cee7f69b482.js"></script>
+    </div>
+    <div class="col-12">
+        <label class="fs-6 text-break">到這邊應該就能連上了</label>
+    </div>
+</div>
