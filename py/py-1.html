@@ -1,9 +1,6 @@
 <div class="row">
     <div class="col-12">
-        <label class="fs-2">ResNet</label>
-    </div>
-    <div class="col-12">
-        <label class="fs-6 text-break">Residual Neural Network，</label>
+        <label class="fs-2">Implementation of ResNet for Image Classification on the Flowers102 Dataset</label>
     </div>
 </div>
 <div class="row mt-5">
@@ -14,17 +11,66 @@
         <label class="fs-6 text-break">其中提出的Residual Block使深層網路更容易訓練(如下圖)</label>
     </div>
     <div class="col-12">
-        <label class="fs-6 text-break">雖然近期研究多半改用ViT，ResNet架構仍然相當重要</label>
+        <label class="fs-6 text-break">雖然近期研究多半改用ViT，ResNet仍然相當重要</label>
     </div>
-    <img src="/img/py-1-1.png" alt="Residual Block">
-    <img src="/notes/img/py-1-1.png" alt="">
+    <div class="col-12">
+        <img src="/notes/img/py-1-1.png" class="img-fluid" alt="Residual Block">
+    </div>
 </div>
 <div class="row mt-5">
     <div class="col-12">
-        <label class="fs-6 text-break">實作(施工中)</label>
+        <label class="fs-6 text-break">實作</label>
     </div>
     <div class="col-12">
-        <script src=""></script>
+        <label class="fs-6 text-break">python、torch、driver、cuda以及numpy等環境需特別注意版本衝突</label>
+    </div>
+    <div class="col-12">
+        <label class="fs-6 text-break">以下範例使用ResNet34與Flowers102資料集</label>
+    </div>
+    <div class="col-12">
+        <label class="fs-6 text-break">在這個任務上我認為前處理中ColorJitter效果最為重要</label>
+    </div>
+    <div class="col-12">
+        <label class="fs-6 text-break">資料集分割、前處理(特別注意Flowers102中train/test是相反的)</label>
+    </div>
+    <div class="col-12">
+        <script src="https://gist.github.com/uccu1478/d85e8bcefae6ed04aae313c7617932ca.js"></script>
+    </div>
+</div>
+<div class="row mt-5">
+    <div class="col-12">
+        <label class="fs-6 text-break">Residual Block與ResNet34</label>
+    </div>
+    <div class="col-12">
+        <label class="fs-6 text-break">_make_layer中第二個參數(2,2,2,2)是ResNet18，(3,4,6,3)是ResNet34，每個Block有2層conv</label>
+    </div>
+    <div class="col-12">
+        <label class="fs-6 text-break">而ResNet50/101/152的Residual Block與18/34版本不同，每個Block有3層conv，並採用bottleneck降低運算量</label>
+    </div>
+    <div class="col-12">
+        <label class="fs-6 text-break">但由於本人偷懶所以下方只有ResNet34</label>
+    </div>
+    <div class="col-12">
+        <script src="https://gist.github.com/uccu1478/2db7149ff3289c8c3af9a7ca5b095b9f.js"></script>
+    </div>
+</div>
+<div class="row mt-5">
+    <div class="col-12">
+        <label class="fs-6 text-break">訓練</label>
+    </div>
+    <div class="col-12">
+        <script src="https://gist.github.com/uccu1478/5640ee3e821b7e37cbe0e3bf1c666afe.js"></script>
+    </div>
+</div>
+<div class="row mt-5">
+    <div class="col-12">
+        <label class="fs-6 text-break">結果</label>
+    </div>
+    <div class="col-12">
+        <label class="fs-6 text-break">取val最高準確率，test達到91.18%</label>
+    </div>
+    <div class="col-12">
+        <img src="/notes/img/py-1-2.png" class="img-fluid" alt="Residual Block">
     </div>
 </div>
 <div class="row mt-5">
@@ -32,8 +78,12 @@
         <label class="fs-6 text-break">參考資料</label>
         <ul class="fs-6 text-break">
             <li>
-                <a href="https://arxiv.org/abs/1512.03385" target="_blank">Deep Residual Learning for Image Recognition</a>
-                <a href="https://zh.wikipedia.org/zh-tw/%E6%AE%8B%E5%B7%AE%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C" target="_blank">殘差神經網路</a>
+                <a href="https://arxiv.org/abs/1512.03385" target="_blank">Deep Residual Learning for Image
+                    Recognition</a>
+            </li>
+            <li>
+                <a href="https://zh.wikipedia.org/zh-tw/%E6%AE%8B%E5%B7%AE%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C"
+                    target="_blank">殘差神經網路</a>
             </li>
         </ul>
     </div>

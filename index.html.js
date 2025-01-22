@@ -20,7 +20,7 @@ const sections = [
     },
     {
         id: 'PY', icon: 'devicon-python-plain', title: 'Python', items: [
-            { text: 'ResNet', date: '2025-01-22', path: 'py', file: 'py-1' },
+            { text: 'Implementation of ResNet for Image Classification on the Flowers102 Dataset', date: '2025-01-22', path: 'py', file: 'py-1' },
         ]
     },
     {
@@ -29,7 +29,7 @@ const sections = [
         ]
     },
     {
-        id: 'Z', icon: '', title: '其他', items: [
+        id: 'Z', icon: 'devicon-gitbook-original', title: '其他', items: [
             { text: '上架App至Google Play Store', date: '2024-04-02', path: 'z', file: 'z-1' },
             { text: 'Windows 10 工作列顯示秒數', date: '2024-04-03', path: 'z', file: 'z-2' },
             { text: 'Windows 10 相片 應用程式消失', date: '2024-04-16', path: 'z', file: 'z-3' },

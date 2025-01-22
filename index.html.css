@@ -14,7 +14,6 @@ footer {
     position: absolute;
     bottom: 0;
     width: 100%;
-    /* height: 160px; */
 }
 
 @media (max-width: 992px) {
@@ -37,13 +36,19 @@ footer {
 .btn {
     vertical-align: middle;
     font-size: x-large;
-    transition: 0.25s;
+    transition: all 0.3s ease;
+    padding: 10px 20px;
+    border: 2px solid transparent;
+    border-radius: 20px;
+    position: relative;
+    overflow: hidden;
 }
 
 .btn:hover,
 .btn:focus {
     box-shadow: rgba(0, 0, 0, 0.25) 0 0.25em 0.5em, rgba(0, 0, 0, 0.22) 0 0.25em 0.25em;
     transform: translateY(-0.2em);
+    border: 2px solid #1f77b4;
 }
 
 .btn label {
