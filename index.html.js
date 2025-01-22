@@ -19,6 +19,11 @@ const sections = [
         ]
     },
     {
+        id: 'PY', icon: 'devicon-python-plain', title: 'Python', items: [
+            { text: 'ResNet', date: '2025-01-22', path: 'py', file: 'py-1' },
+        ]
+    },
+    {
         id: 'SQL', icon: 'devicon-microsoftsqlserver-plain', title: 'SQL', items: [
             { text: '取得新增資料之識別-OUTPUT', date: '2022-11-04', path: 'sql', file: 'sql-1' },
         ]
@@ -29,7 +34,7 @@ const sections = [
             { text: 'Windows 10 工作列顯示秒數', date: '2024-04-03', path: 'z', file: 'z-2' },
             { text: 'Windows 10 相片 應用程式消失', date: '2024-04-16', path: 'z', file: 'z-3' },
             { text: '判斷Endian', date: '2024-04-26', path: 'z', file: 'z-4' },
-            { text: '課程筆記-機器學習2021', date: '2024-08-30', path: 'z', file: 'z-5' },
+            // { text: '課程筆記-機器學習2021', date: '2024-08-30', path: 'z', file: 'z-5' },
             { text: 'RV1126 連接WiFi網路', date: '2024-10-19', path: 'z', file: 'z-6' },
         ]
     },
