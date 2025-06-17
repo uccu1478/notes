@@ -1,4 +1,4 @@
-import { sections } from './sections.js?v=20250123';
+import { sections } from './sections.js?v=20250617';
 
 $(function () {
     initSections();
@@ -74,6 +74,14 @@ function initClicks() {
     // Remove focus after button click
     $('.btn').on('click', function () {
         $(this).blur();
+    });
+
+    // Fix: reset padding-right after modal with long content is closed (due to dynamic layout shift)
+    $('#staticBackdrop').on('hidden.bs.modal', function () {
+        $('body').css({
+            'padding-right': '',
+            'overflow': ''
+        });
     });
 }
 

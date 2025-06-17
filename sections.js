@@ -1,5 +1,10 @@
 export const sections = [
     {
+        id: 'Paper', icon: 'devicon-illustrator-plain', title: 'AI Papers', items: [
+            { text: 'Conferences & Classic Papers', date: '2025-06-17', path: 'paper', file: 'paper-1' },
+        ]
+    },
+    {
         id: 'CPlusPlus', icon: 'devicon-cplusplus-plain', title: 'C++', items: [
             { text: 'C++單元測試', date: '2024-03-16', path: 'cpp', file: 'cpp-1' },
         ]
@@ -21,6 +26,7 @@ export const sections = [
     {
         id: 'PY', icon: 'devicon-python-plain', title: 'Python', items: [
             { text: 'Implementation of ResNet for Image Classification on the Flowers102 Dataset', date: '2025-01-22', path: 'py', file: 'py-1' },
+            // { text: '模型輸出ONNX', date: '2025-06-??', path: 'py', file: 'py-2' },
         ]
     },
     {
